@@ -5,9 +5,11 @@ const Baker = require('../models/baker.js')
 
 // INDEX
 breads.get('/', (req, res) => {
-  res.render('Index',
-  {
-    breads: Bread,
+  Baker.find()
+  .then(foundBakers => {
+  res.render('Index', {
+    breads: foundBreads,
+    bakers: foundBakers,
   title: 'Index Page'
   }
   )
@@ -38,6 +40,15 @@ breads.get('/:id', (req, res) => {
       })
 })
 
+breads.get('/:arrayIndex', (req, res) => {
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex]
+    })
+  } else {
+    res.render('404')
+  }
+})
 
 
 
