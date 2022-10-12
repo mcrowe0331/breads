@@ -1,8 +1,6 @@
 // DEPENDENCIES
 const express = require('express')
 const methodOverride = require('method-override')
-
-
 const mongoose = require('mongoose')
 
 
@@ -42,11 +40,15 @@ app.use('/breads', breadsController)
 app.listen(PORT, () => {
     console.log('listening on port', PORT);
 })
+
+// bakers
+const bakersController = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersController)
 // 404 Page
 app.get('*', (req, res) => {
     res.send('404')
   })
 
-  
+
 
 console.log(PORT)
