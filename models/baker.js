@@ -16,13 +16,8 @@ const bakerSchema = new Schema({
         type: String,
         required: true
         enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Ross', 'Phoebe']
-    },{toJSON: { virtuals: true}})
-    StartDate: {
-        type: Date,
-        required: true
-    },
-    bio: String
-})
+  
+
 
 // model and export
 const Baker = mongoose.model('Baker', bakerSchema)
