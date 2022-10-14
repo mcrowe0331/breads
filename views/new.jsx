@@ -8,19 +8,16 @@ const Default = require('./layouts/Default')
 // function New ({bakers}) {
 //   return (
 //     []
+// <label htmlFor="baker">Baker</label>
+// <select name="baker" id="baker">
+//   <option value="Rachel">Rachel</option>
+//   <option value="Monica">Monica</option>
+//   <option value="Joey">Joey</option>
+//   <option value="Chandler">Chandler</option>
+//   <option value="Ross">Ross</option>
+//   <option value="Phoebe">Phoebe</option>
+// </select>
 
-//     <label htmlFor="baker">Baker</label>
-//     <select name="baker" id="baker">
-//         {bakers.map((baker) => {
-//             return(
-//                 <option value={baker.id} key={baker.id}>{baker.name}</option>
-//             )
-//         })}
-//     </select>
-
-//     [...]
-// )
-// }
 
 function New () {
     return (
@@ -34,7 +31,6 @@ function New () {
             id="name"
             required
           />
-          
           <label htmlFor="image">Image</label>
           <input
             type="text"
