@@ -20,7 +20,7 @@ function Show ({bread, index}) {
   <p>Baked by {bread.backer}</p>
   <li><a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>
 </li>
-  <form action={`/breads/${bread.id}?_method=DELETE`} method="POST">
+  <form action={`/breads/${breads/$index}?_method=PUT`} method="POST">
   <input type='submit' value="DELETE"/>
 </form>
         <img src={bread.image} alt={bread.name} />
