@@ -4,12 +4,7 @@ const { Schema } = mongoose
 const Bread = require('./bread')
 
 
-//Virtuals:
-bakerSchema.virtual('breads', {
-ref: 'Bread',
-localField: '_id',
-foreignField: 'baker'
-})
+
 // schema
 const bakerSchema = new Schema({
     name: {
@@ -23,7 +18,12 @@ const bakerSchema = new Schema({
     },
     bio: String
 })
-
+//Virtuals:
+bakerSchema.virtual('breads', {
+    ref: 'Bread',
+    localField: '_id',
+    foreignField: 'baker'
+    })
   // hooks 
 bakerSchema.post('findOneAndDelete', function() {
     Bread.deleteMany({ baker: this._conditions._id })
